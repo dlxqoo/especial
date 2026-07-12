@@ -3,97 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>para brenda 💜</title>
+    <title>Algo Especial</title>
     <style>
+        /* ESTILOS GERAIS */
         body {
-            /* Lilás mais forte e vibrante */
-            background-color: #8A2BE2; 
+            margin: 0;
+            padding: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
+            background-color: #121212; 
+            color: #fff;
+            transition: background-color 1.5s ease; /* Transição mais lenta e dramática */
+        }
+
+        /* TELA 1: O COFRE (CARTA PRETA) */
+        #vault-screen {
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            padding: 40px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            background-color: #1a1a1a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .padlock {
+            font-size: 40px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        h2 {
+            color: #B57EDC; 
+            margin-bottom: 10px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            font-size: 1.2rem;
+        }
+        p.tip {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #222;
+            color: #fff;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 20px;
+            outline: none;
+            letter-spacing: 2px;
+        }
+        input[type="text"]:focus {
+            border-color: #B57EDC;
+        }
+        button {
+            background-color: transparent;
+            color: #B57EDC;
+            border: 1px solid #B57EDC;
+            padding: 10px 30px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+        button:hover {
+            background-color: #B57EDC;
+            color: #121212;
+        }
+        .error-msg {
+            color: #ff4c4c;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            display: none;
+        }
+
+        /* TELA 2: A DECLARAÇÃO (MINIMALISTA) */
+        #surprise-screen {
+            display: none; 
+            text-align: left; /* Texto alinhado à esquerda para parecer uma carta */
+            max-width: 500px;
+            width: 100%;
+            background-color: transparent;
+            color: #4A0E4E;
             padding: 20px;
+            /* Animação para o texto surgir suavemente */
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        #surprise-screen h1 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        #surprise-screen p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
             color: #333;
         }
-        .card {
-            background-color: #FFFFFF;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+
+        .highlight-love {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8A2BE2; /* Lilás forte para o 'Eu te amo' */
+            display: block;
+            margin: 40px 0;
             text-align: center;
-            max-width: 450px;
-            width: 100%;
+            letter-spacing: 1px;
         }
-        .custom-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #8A2BE2;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
-        }
-        h1 {
-            color: #4B0082; /* Roxo escuro */
-            margin-bottom: 10px;
-            font-size: 2.2rem;
-        }
-        .hearts {
-            font-size: 24px;
-            margin-bottom: 20px;
-            letter-spacing: 5px;
-            animation: bounce 2s infinite;
-        }
-        p {
-            font-size: 1.15rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .joke {
-            font-size: 0.95rem;
-            font-style: italic;
-            color: #666;
-            margin-top: -10px;
-            margin-bottom: 25px;
-        }
+
         .music-player {
-            margin-top: 20px;
-            background-color: #F8F8FF;
-            padding: 15px;
-            border-radius: 12px;
-            border: 2px dashed #8A2BE2;
+            margin-top: 50px;
+            opacity: 0.9;
         }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>brenda,</h1>
+    <!-- ======== TELA DO COFRE ======== -->
+    <div id="vault-screen">
+        <div class="padlock">🔒</div>
+        <h2>ACESSO RESTRITO</h2>
+        <p class="tip">A senha para desbloquear está nos mínimos detalhes.
+        </p>
         
-        <div class="hearts">💜 💜 💜 💜 💜</div>
-        
-        <p>terça feira foi tão bom que eu precisei criar isso só para registrar que a melhor parte do dia foi a sua companhia <br>
-            <br>
-        espero que vc nunca tenha recebido algo assim pra nunca esquecer da primeira vez</p>
-        
-        <p><strong>⬇a música mais romântica que eu conheço⬇</strong> <br>
-            (na próxima vez que a gente sair vc deixa eu cantar?)</p>
-        
-        <div class="music-player">
-            <p style="font-size: 0.95rem; margin-top: 0; margin-bottom: 10px; color: #4B0082; font-weight: bold;">solta o play pra ouvir a pedrada:</p>
-            <!-- Player do Spotify já com a música Te Levo Comigo do Restart -->
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6BcqNZ7D3gI0ALivZMAvux?utm_source=generator&si=70a0410c1e8b4489" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-        
-        <div class="hearts" style="margin-top: 25px;">💜 💜 💜 💜 💜</div>
+        <input type="text" id="password-input" placeholder="SENHA" autocomplete="off">
+        <br>
+        <button onclick="checkPassword()">DESBLOQUEAR</button>
+        <p class="error-msg" id="error-message">Acesso negado. Tente novamente.</p>
     </div>
+
+    <!-- ======== TELA DA DECLARAÇÃO ======== -->
+    <div id="surprise-screen">
+        
+        <h1>Brenda,</h1>
+        
+        <p>Dizem que as melhores surpresas são aquelas que a gente não espera. E desde aquele nosso encontro, você tem sido exatamente isso na minha vida.</p>
+        
+        <p>Eu queria criar algo especial, um espaço só nosso, não apenas para te dar um presente, mas para registrar o quanto a sua companhia se tornou importante e única para mim em tão pouco tempo.</p>
+        
+        <p>A verdade que eu guardei a sete chaves nesse cofre (e que você acabou de abrir) é muito simples:</p>
+        
+        <span class="highlight-love">Eu te amo.</span>
+        
+    </div>
+
+    <!-- ======== LÓGICA ======== -->
+    <script>
+        function checkPassword() {
+            const input = document.getElementById("password-input").value.toUpperCase().trim();
+            const errorMsg = document.getElementById("error-message");
+            
+            // Defina a sua senha aqui
+            const secretPassword = "06/06/2026"; 
+
+            if (input === secretPassword) {
+                document.getElementById("vault-screen").style.display = "none";
+                // Muda para um lilás bem clarinho e elegante
+                document.body.style.backgroundColor = "#F4F0F8"; 
+                document.getElementById("surprise-screen").style.display = "block";
+                document.title = "Algo Especial";
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
 
 </body>
 </html>
